@@ -1,0 +1,34 @@
+{
+  "token": "",
+  "prefix": [".","!","r!"],
+  "guildID": "1055134730892349450",
+  "BotClientID": "1064204117607727175",
+  "mongoUrl": "",
+  "owners": ["962417173043753022"],
+  "botDurum": "Developed By Ramal.",
+  "botSes": "1062832966646104215",
+  "registerPerm": "1031156836050669649",
+   
+  "dmMessages": true,
+
+  "messageDolar": 1,
+  "voiceDolar": 1,
+
+  "messageCount": 1,
+  "messageCoin": 2,
+  "voiceCount": 1,
+  "voiceCoin": 4,
+  "publicCoin": 4,
+  "inviteCount": 1,
+  "inviteCoin": 15,
+  "taggedCoin": 25,
+  "toplamsCoin": 5.5,
+  "yetkiCoin": 30,
+
+
+  "banlimit": 3,
+  "jaillimit": 8,
+  "warnlimit": 3,
+  "chatmutelimit": 3,
+  "voicemutelimit": 3
+}
