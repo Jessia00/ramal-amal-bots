@@ -1,0 +1,60 @@
+{
+    "SERVER": {
+        "ID": "1043891010687729755",
+        "Name": "Ekip Bot Sunucussus",
+        "OwnerID":"962417173043753022"
+    },
+
+    "TOKENS": {
+        "Requirements": "", 
+        "Statistics": "",
+        "Voucher": "",
+        
+        "SECURITY": {
+            "MAIN": "",
+            "SEC_ONE": "",
+            "SEC_TWO": "",
+            "SEC_THREE": "",
+            "SEC_FOUR": "",
+            "DISTS": [
+                "",
+                "",
+                ""
+            ],
+            "GUILD_OWNER_TOKEN": ""
+        },
+
+        "WELCOME": {
+            "Active": true,
+            "WELCOMES": [
+            ],
+            "WELCOME_CHANNELS": [
+                "",
+                ""
+            ]
+        }
+    },
+    "botSettings": {
+        "Prefixs": [".","+","!","/","-"]
+    },
+    
+    "embed": {
+        "iconURL": "",
+        "başlık": "",
+        "altbaşlık": "Değer Mi",
+        "renk": "RANDOM"
+      },
+
+    "botStatus": {
+        "type:": "STREAMING" , 
+        "url": "https://www.twitch.tv/ramalcik",
+        "Name": "Değer Mi",
+        "voiceChannelID": ""
+    },
+    "Database" : {
+        "Active": true,
+        "MongoURL": ""
+    }
+
+}
+
