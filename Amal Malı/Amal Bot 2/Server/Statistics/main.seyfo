@@ -1,0 +1,61 @@
+const { seyfo } = require('../../Global/Clients/Global.Clients');
+const { Mongoose } = require('../../Global/Databases/Global.MongoDB.Driver');
+const client = global.client = new seyfo();
+const { GUILD } = require('../../Global/Init/Settings');
+const { Collection } = require('discord.js');
+
+// Client Ayarları (Başlangıç)
+client.invites = new Collection()
+client.botName = "Statistics"
+// Client Ayarları (SON)
+
+Mongoose.Connect()
+GUILD.fetch(sistem.SERVER.ID)
+client.fetchCommands(false)
+client.fetchEvents()
+client.connect(sistem.TOKENS.Statistics)
+
+
+// Haftalık Stat Temizleme
+
+const StatsSchema = require('../../Global/Databases/Schemas/Plugins/Client.Users.Stats');
+
+var CronJob = require('cron').CronJob
+let HaftalıkVeriler = new CronJob('00 00 00 * * 1', async function() { 
+   let guild = client.guilds.cache.get(sistem.SERVER.ID);
+   let safeMap = new Map()
+   let stats = await StatsSchema.find({ guildID: guild.id });
+   stats.filter(s => !guild.members.cache.has(s.userID)).forEach(async (s) =>  await StatsSchema.findByIdAndDelete(s._id));
+   client.logger.log("Haftasonu otomatik istatistik veri temizliği!","stat")
+   let nesils = [
+              roller.nesilbir,
+              roller.nesiliki,
+              roller.nesilüç,
+              roller.nesildört,
+              roller.nesilbeş,
+              roller.nesilaltı,
+              roller.nesilyedi,
+              roller.nesilsekiz,
+              roller.nesildokuz,
+              roller.nesilon
+   ]
+   
+   guild.members.cache.filter(x => nesils.some(a => x.roles.cache.has(a))).map(x => {
+      x.roles.remove(nesils)
+      x.roles.add(nesils[9]);
+     
+   })
+
+   stats.forEach(async (data) => {
+      let uye = guild.members.cache.get(data.userID)
+      if(!uye) return;
+      let oldVoice = data.voiceStats || new Map()
+      await StatsSchema.updateOne({guildID: guild.id, userID: uye.id}, { $set: { oldVoiceStats: oldVoice, voiceStats: safeMap, chatStats: safeMap } }, {upsert: true})
+      
+   })
+   await StatsSchema.updateMany({ guildID: guild.id }, { $set: {voiceStats: safeMap, chatStats: safeMap}}, {upsert: true}); 
+}, null, true, 'Europe/Istanbul');
+
+HaftalıkVeriler.start();
+
+// Haftalık Stat Temizleme
