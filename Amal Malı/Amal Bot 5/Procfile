@@ -1,0 +1,1 @@
+worker pm2-runtime start system.config.js --env production

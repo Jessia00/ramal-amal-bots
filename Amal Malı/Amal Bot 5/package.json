@@ -1,0 +1,31 @@
+{
+  "name": "ramalbot",
+  "main": "system.config.js",
+  "scripts": {
+    "test": "pm2-runtime start system.config.js --env production"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "canvas-constructor": "^4.1.0",
+    "chalk": "^4.1.0",
+    "discord-anti-spam": "^2.5.1",
+    "discord-buttons": "^4.0.0-deprecated",
+    "discord-logs": "^1.8.2",
+    "discord.js": "^12.5.3",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "moment-timezone": "^0.5.32",
+    "mongoose": "^5.11.11",
+    "pm2": "^5.2.0",
+    "pretty-ms": "^7.0.1",
+    "random-number-csprng": "^1.0.2",
+    "request": "^2.88.2",
+    "slot-machine": "^2.1.0",
+    "slot-machine.js": "^1.0.7",
+    "string-table": "^0.1.5"
+  },
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
